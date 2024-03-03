@@ -4,11 +4,16 @@ return {
     config = function()
       require("mkdnflow").setup({
         perspective = {
-          priority = "root",
+          priority = "current",
           fallback = "current",
           root_tell = "index.md",
-          nvim_wd_heel = true,
-          update = true,
+          nvim_wd_heel = false,
+          update = false,
+        },
+        mappings = {
+          MkdnToggleToDo = { { "n", "v" }, "<leader>a" },
+          MkdnFoldSection = { "n", "<leader>zf" },
+          MkdnUnfoldSection = { "n", "<leader>zF" },
         },
       })
     end,
