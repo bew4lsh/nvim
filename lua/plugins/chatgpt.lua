@@ -9,6 +9,7 @@ return {
       require("chatgpt").setup({
         chat = {
           keymaps = {
+            send_file_content = "<C-f>",  -- New keybinding
             close = "<C-c>",
             yank_last = "<C-y>",
             yank_last_code = "<C-k>",
