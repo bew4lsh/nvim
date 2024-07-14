@@ -3,6 +3,7 @@ return {
     "jackMort/ChatGPT.nvim",
     keys = {
       { "<leader>cg", "<cmd>ChatGPT<cr>", desc = "Chat GPT" },
+      { "<leader>ce", "<cmd>ChatGPTEditWithInstructions<cr>", desc = "Edit with instructions" },
     },
     event = "VeryLazy",
     config = function()
