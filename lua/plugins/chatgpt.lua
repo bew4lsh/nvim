@@ -9,7 +9,6 @@ return {
       require("chatgpt").setup({
         chat = {
           keymaps = {
-            send_file_content = "<C-f>",  -- New keybinding
             close = "<C-c>",
             yank_last = "<C-y>",
             yank_last_code = "<C-k>",
@@ -17,7 +16,7 @@ return {
             scroll_down = "<C-d>",
             new_session = "<C-n>",
             cycle_windows = "<Tab>",
-            cycle_modes = "<C-f>",
+            -- cycle_modes = "<C-f>",
             next_message = "<C-j>",
             prev_message = "<C-k>",
             select_session = "<Space>",
@@ -32,7 +31,7 @@ return {
             toggle_message_role = "<C-r>",
             toggle_system_role_open = "<C-s>",
             stop_generating = "<C-x>",
-            send_file_content = "<C-f>",  -- New keybinding
+            send_file_content = "<C-f>", -- New keybinding
           },
         },
       })
