@@ -4,6 +4,8 @@ return {
     keys = {
       { "<leader>cg", "<cmd>ChatGPT<cr>", desc = "Chat GPT" },
       { "<leader>ce", "<cmd>ChatGPTEditWithInstructions<cr>", desc = "Edit with instructions", mode = { "n", "v" } },
+      { "<leader>cx", "<cmd>ChatGPTRun explain_code<cr>", desc = "Edit with instructions", mode = { "n", "v" } },
+      { "<leader>cc", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Edit with instructions", mode = { "n", "v" } },
     },
     event = "VeryLazy",
     config = function()

@@ -20,6 +20,8 @@ return {
   },
   { "rktjmp/lush.nvim" },
   -- { "nyoom-engineering/oxocarbon.nvim", opts = { background = "dark" } },
+  { "maxmx03/FluoroMachine.nvim" },
+  { "shaunsingh/moonlight.nvim" },
   { "olivercederborg/poimandres.nvim" },
   { "JoosepAlviste/palenightfall.nvim" },
   { "xero/miasma.nvim" },
