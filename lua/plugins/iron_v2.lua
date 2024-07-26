@@ -21,15 +21,15 @@ return {
           sh = {
             command = { "zsh" },
           },
-          py = {
-            command = "python3",
+          python = {
+            command = "IPython",
           },
         },
         repl_open_cmd = require("iron.view").right(80),
       },
       keymaps = {
         -- You can keep the original keymaps here if needed
-        visual_send = "<leader>rc",
+        visual_send = "<leader><cr>",
         send_file = "<leader>ra",
         send_line = "<leader>rl",
         send_mark = "<leader>rm",
@@ -53,7 +53,7 @@ return {
         { "<leader>rh", "<cmd>IronHide<cr>", desc = "Hide repl" },
         { "<leader>rf", "<cmd>IronFocus<cr>", desc = "Focus repl" },
         { "<leader>rl", desc = "Clear repl" },
-        { "<leader>rc", desc = "Visual Send", mode = { "v" } },
+        { "<leader><cr>", desc = "Visual Send", mode = { "v" } },
         { "<leader>ra", desc = "Send File", mode = { "n" } },
         { "<leader>rl", desc = "Send Line", mode = { "n" } },
         { "<leader>rm", desc = "Send Mark", mode = { "n" } },
