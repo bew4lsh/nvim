@@ -22,7 +22,7 @@ return {
             command = { "zsh" },
           },
           python = {
-            command = "IPython",
+            command = { "ipython", "--no-autoindent" },
           },
         },
         repl_open_cmd = require("iron.view").right(80),
