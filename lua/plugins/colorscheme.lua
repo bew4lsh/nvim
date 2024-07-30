@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "rose-pine-main",
     },
   },
   { "ellisonleao/gruvbox.nvim" },
@@ -26,7 +26,6 @@ return {
   { "JoosepAlviste/palenightfall.nvim" },
   { "xero/miasma.nvim" },
   { "yonlu/omni.vim" },
-  { "lmburns/kimbox" },
   { "shrikecode/kyotonight.vim" },
   { "numToStr/Sakura.nvim" },
   { "luisiacc/the-matrix.nvim" },

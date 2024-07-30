@@ -23,6 +23,7 @@ return {
           },
           python = {
             command = { "ipython", "--no-autoindent" },
+            format = require("iron.fts.common").bracketed_paste_python,
           },
         },
         repl_open_cmd = require("iron.view").right(80),
@@ -42,7 +43,7 @@ return {
       highlight = {
         italic = true,
       },
-      ignore_blank_lines = true,
+      ignore_blank_lines = false,
     })
     -- Register which-key mappings
     wk.add({
