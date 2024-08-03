@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine-main",
+      colorscheme = "fluoromachine",
     },
   },
   { "ellisonleao/gruvbox.nvim" },
@@ -20,7 +20,51 @@ return {
   },
   { "rktjmp/lush.nvim" },
   -- { "nyoom-engineering/oxocarbon.nvim", opts = { background = "dark" } },
-  { "maxmx03/FluoroMachine.nvim" },
+  {
+    "maxmx03/fluoromachine.nvim",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      local fm = require("fluoromachine")
+
+      fm.setup({
+        transparent = false,
+        plugins = {
+          neotree = true,
+        },
+        overrides = {
+          ["@type"] = { italic = true, bold = false },
+          ["@function"] = { italic = false, bold = false },
+          ["@comment"] = { italic = true },
+          ["@keyword"] = { italic = false },
+          ["@constant"] = { italic = false, bold = false },
+          ["@variable"] = { italic = true },
+          ["@field"] = { italic = true },
+          ["@parameter"] = { italic = true },
+        },
+        glow = false,
+        theme = "delta",
+        colors = function(_, color)
+          local darken = color.darken
+          local lighten = color.lighten
+          local blend = color.blend
+          local shade = color.shade
+          local tint = color.tint
+          return {
+            bg = "#190920",
+            bgdark = darken("#190920", 20),
+            cyan = "#49eaff",
+            red = "#ff006f",
+            yellow = "#56ff75",
+            orange = "#663173",
+            pink = "#c4276e",
+            purple = "#9544f7",
+          }
+        end,
+      })
+      vim.cmd.colorscheme("fluoromachine")
+    end,
+  },
   { "shaunsingh/moonlight.nvim" },
   { "olivercederborg/poimandres.nvim" },
   { "JoosepAlviste/palenightfall.nvim" },

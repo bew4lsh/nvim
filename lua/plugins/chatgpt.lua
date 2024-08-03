@@ -38,7 +38,7 @@ return {
             send_file_content = "<C-f>", -- New keybinding
           },
         },
-        actions_paths = { "/Users/bewalsh/.config/nvim/lua/plugins/chatgpt_actions.json" },
+        actions_paths = { "C:/Users/bew4l_000/AppData/Local/nvim/lua/plugins/chatgpt_actions.json" },
       })
     end,
     dependencies = {
