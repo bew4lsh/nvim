@@ -1,0 +1,22 @@
+return {
+  "JellyApple102/easyread.nvim",
+  keys = {
+    { "<leader>bh", "<cmd>EasyreadToggle<cr>", desc = "Toggle Easyread" },
+  },
+  config = function()
+    require("easyread").setup({
+      --   hlValues = {
+      --     ["1"] = 1,
+      --     ["2"] = 1,
+      --     ["3"] = 2,
+      --     ["4"] = 2,
+      --     ["fallback"] = 0.4,
+      --   },
+      --   hlgroupOptions = { link = "Bold" },
+      --   fileTypes = { "text", "markdown", "md", "lua" },
+      --   saccadeInterval = 1,
+      --   saccadeReset = false,
+      --   updateWhileInsert = true,
+    })
+  end,
+}
