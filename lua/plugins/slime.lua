@@ -5,7 +5,7 @@ return {
       -- Slime configuration
       vim.g.slime_target = "wezterm" -- Change to your target (wezterm, tmux, etc.)
       vim.g.slime_paste_file = vim.fn.expand("$HOME/.slime_paste")
-      vim.g.slime_bracketed_paste = 0
+      vim.g.slime_bracketed_paste = 1
       vim.g.slime_default_config = {
         socket_name = "default",
         target_pane = ".2",
