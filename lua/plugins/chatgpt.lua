@@ -5,7 +5,7 @@ return {
       { "<leader>cg", "<cmd>ChatGPT<cr>", desc = "Chat GPT" },
       { "<leader>ce", "<cmd>ChatGPTEditWithInstructions<cr>", desc = "Edit with instructions", mode = { "n", "v" } },
       { "<leader>cx", "<cmd>ChatGPTRun explain_code<cr>", desc = "Edit with instructions", mode = { "n", "v" } },
-      -- { "<leader>cc", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Edit with instructions", mode = { "n", "v" } },
+      { "<leader>cy", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Edit with instructions", mode = { "n", "v" } },
       { "<leader>ci", "<cmd>ChatGPTRun clarify_idea<cr>", desc = "Clarify Idea", mode = { "n", "v" } },
     },
     event = "VeryLazy",
@@ -38,7 +38,7 @@ return {
             send_file_content = "<C-f>", -- New keybinding
           },
         },
-        actions_paths = { "C:/Users/bew4l_000/AppData/Local/nvim/lua/plugins/chatgpt_actions.json" },
+        actions_paths = { "C:/Users/william.j.walsh/AppData/Local/nvim/lua/plugins/chatgpt_actions.json" },
       })
     end,
     dependencies = {

@@ -26,14 +26,14 @@ return {
       --   end
       -- end
       -- Set up which-key keybinding for vim-slime
-      local wk = require("which-key")
-      wk.add({
-        {
-          { "<leader>t", group = "Slime" },
-          { "<leader>ts", "<cmd>SlimeSend<cr>", desc = "Send to Slime", mode = { "n", "v" } },
-          { "<leader>tc", "<cmd>SlimeConfig<cr>", desc = "Configure Slime", mode = { "n", "v" } },
-        },
-      })
+      -- local wk = require("which-key")
+      -- wk.add({
+      --   {
+      --     { "<leader>t", group = "Slime" },
+      --     { "<leader>ts", "<cmd>SlimeSend<cr>", desc = "Send to Slime", mode = { "n", "v" } },
+      --     { "<leader>tc", "<cmd>SlimeConfig<cr>", desc = "Configure Slime", mode = { "n", "v" } },
+      --   },
+      -- })
     end,
   },
 }
