@@ -14,4 +14,16 @@ function ToggleMarkdownTodo()
   vim.fn.setline(".", line)
 end
 
-vim.api.nvim_set_keymap("n", "<leader>t", ":lua ToggleMarkdownTodo()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>t",
+  ":lua ToggleMarkdownTodo()<CR>",
+  { noremap = true, silent = true, desc = "Toggle Markdown Todo" }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>yq",
+  ":QalcYank *<CR>",
+  { noremap = true, silent = true, desc = "Copy Qalc Result" }
+)
