@@ -1,7 +1,7 @@
 return {
   {
     "Apeiros-46B/qalc.nvim",
-    config = {
+    opts = {
       -- extra command arguments for Qalculate
       -- do NOT use the option `-t`/`--terse`; it will break the plugin
       -- example: { '--set', 'angle deg' } to use degrees as the default angle unit
