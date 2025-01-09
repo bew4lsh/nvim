@@ -32,13 +32,29 @@ vim.api.nvim_set_keymap(
 
 function ToggleMarkdownTodo()
   local line = vim.fn.getline(".")
-  if line:match("%- %[% %]") then
-    line = line:gsub("%- %[% %]", "- [-]", 1)
-  elseif line:match("%- %[%-%]") then
-    line = line:gsub("%- %[%-%]", "- [x]", 1)
-  elseif line:match("%- %[x%]") then
-    line = line:gsub("%- %[x%]", "- [ ]", 1)
+  local today = os.date("%Y-%m-%d")
+
+  -- Helper to remove any existing [completion:: ...] tag
+  local function strip_completion_tag(str)
+    return str:gsub("%[completion::.-%]", ""):gsub("%s+$", "")
   end
+
+  if line:match("%- %[% %]") then
+    -- [ ] => [-]
+    line = line:gsub("%- %[% %]", "- [-]", 1)
+    -- Remove any old completion tag if present
+    line = strip_completion_tag(line)
+  elseif line:match("%- %[%-%]") then
+    -- [-] => [x], mark done, append [completion:: ...] at line end
+    line = strip_completion_tag(line)
+    line = line:gsub("%- %[%-%]", "- [x]", 1)
+    line = line .. " [completion:: " .. today .. "]"
+  elseif line:match("%- %[x%]") then
+    -- [x] => [ ], revert to undone and remove completion tag
+    line = line:gsub("%- %[x%]", "- [ ]", 1)
+    line = strip_completion_tag(line)
+  end
+
   vim.fn.setline(".", line)
 end
 
