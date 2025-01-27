@@ -29,10 +29,11 @@
   "grammar_correction": {
     "type": "chat",
     "opts": {
-      "template": "Correct this to standard {{lang}}:\n\n{{input}}",
+      "template": "Correct this to standard {{lang}} and re-write it using my writing style and tone:\n\n{{input}}",
       "strategy": "replace",
       "params": {
-        "model": "gpt-4o-mini"
+        "model": "ft:gpt-4o-2024-08-06:personal::Au5ct5ya",
+        "max_tokens": 4096
       }
     },
     "args": {
@@ -40,6 +41,17 @@
         "type": "string",
         "optional": "true",
         "default": "english"
+      }
+    }
+  },
+  "write_as_me": {
+    "type": "chat",
+    "opts": {
+      "template": "In my voice, style and tone, write based on the following prompt.\n\nPrompt:\n```\n{{input}}\n```",
+      "strategy": "chat",
+      "params": {
+        "model": "ft:gpt-4o-2024-08-06:personal::Au5ct5ya",
+        "max_tokens": 4096
       }
     }
   },
