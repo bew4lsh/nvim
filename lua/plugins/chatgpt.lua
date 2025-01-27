@@ -4,9 +4,10 @@ return {
     keys = {
       { "<leader>cg", "<cmd>ChatGPT<cr>", desc = "Chat GPT" },
       { "<leader>ce", "<cmd>ChatGPTEditWithInstructions<cr>", desc = "Edit with instructions", mode = { "n", "v" } },
-      { "<leader>cx", "<cmd>ChatGPTRun explain_code<cr>", desc = "Edit with instructions", mode = { "n", "v" } },
-      { "<leader>cy", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Edit with instructions", mode = { "n", "v" } },
+      { "<leader>cx", "<cmd>ChatGPTRun explain_code<cr>", desc = "Explain this code selection", mode = { "n", "v" } },
+      { "<leader>cy", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Correct my grammar", mode = { "n", "v" } },
       { "<leader>ci", "<cmd>ChatGPTRun clarify_idea<cr>", desc = "Clarify Idea", mode = { "n", "v" } },
+      { "<leader>cw", "<cmd>ChatGPTRun write_as_me<cr>", desc = "Write for me", mode = { "n", "v" } },
     },
     event = "VeryLazy",
     config = function()
@@ -38,7 +39,10 @@ return {
             send_file_content = "<C-f>", -- New keybinding
           },
         },
-        actions_paths = { "C:/Users/william.j.walsh/AppData/Local/nvim/lua/plugins/chatgpt_actions.json" },
+        -- Using stdpath("config") to make this relative to your Neovim config path
+        actions_paths = {
+          vim.fn.stdpath("config") .. "/lua/plugins/chatgpt_actions.json",
+        },
       })
     end,
     dependencies = {
