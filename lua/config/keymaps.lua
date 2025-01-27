@@ -228,7 +228,7 @@ local function insert_obsidian_todo_multi()
     "",
     "Instructions:",
     "  • Edit each line as needed",
-    "  • Press <Enter> to confirm, or <Esc> to cancel",
+    "  • Press <Enter> to confirm, or <q> to cancel",
   }
 
   local buf, win = open_floating_window(input_lines)
@@ -265,9 +265,9 @@ local function insert_obsidian_todo_multi()
   end
 
   vim.keymap.set("n", "<CR>", on_confirm, { buffer = buf, nowait = true, noremap = true, silent = true })
-  vim.keymap.set("n", "<Esc>", on_cancel, { buffer = buf, nowait = true, noremap = true, silent = true })
+  vim.keymap.set("n", "q", on_cancel, { buffer = buf, nowait = true, noremap = true, silent = true })
 
-  vim.cmd("startinsert")
+  -- vim.cmd("startinsert")
 end
 
 vim.api.nvim_create_user_command("NewObsidianTodoMulti", insert_obsidian_todo_multi, {})
@@ -306,7 +306,7 @@ local function edit_obsidian_todo_multi()
     "",
     "Instructions:",
     "  • Edit each line as needed",
-    "  • Press <Enter> to confirm changes, or <Esc> to cancel",
+    "  • Press <Enter> to confirm changes, or <q> to cancel",
   }
 
   local buf, win = open_floating_window(input_lines)
@@ -341,9 +341,9 @@ local function edit_obsidian_todo_multi()
   end
 
   vim.keymap.set("n", "<CR>", on_confirm, { buffer = buf, nowait = true, noremap = true, silent = true })
-  vim.keymap.set("n", "<Esc>", on_cancel, { buffer = buf, nowait = true, noremap = true, silent = true })
+  vim.keymap.set("n", "q", on_cancel, { buffer = buf, nowait = true, noremap = true, silent = true })
 
-  vim.cmd("startinsert")
+  -- vim.cmd("startinsert")
 end
 
 vim.api.nvim_create_user_command("EditObsidianTodoMulti", edit_obsidian_todo_multi, {})
