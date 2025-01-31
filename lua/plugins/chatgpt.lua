@@ -8,6 +8,7 @@ return {
       { "<leader>cy", "<cmd>ChatGPTRun grammar_correction<cr>", desc = "Correct my grammar", mode = { "n", "v" } },
       { "<leader>ci", "<cmd>ChatGPTRun clarify_idea<cr>", desc = "Clarify Idea", mode = { "n", "v" } },
       { "<leader>cw", "<cmd>ChatGPTRun write_as_me<cr>", desc = "Write for me", mode = { "n", "v" } },
+      { "<leader>cm", "<cmd>ChatGPTRun write_email<cr>", desc = "Email for me", mode = { "n", "v" } },
     },
     event = "VeryLazy",
     config = function()

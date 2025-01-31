@@ -29,7 +29,7 @@
   "grammar_correction": {
     "type": "chat",
     "opts": {
-      "template": "Correct this to standard {{lang}} and re-write it using my writing style and tone:\n\n{{input}}",
+      "template": "You rewrite text in a pragmatic, no-nonsense style, prioritizing concise explanations and practical takeaways. Correct this to standard {{lang}} and re-write it using my writing style and tone:\n\n{{input}}",
       "strategy": "replace",
       "params": {
         "model": "ft:gpt-4o-2024-08-06:personal::Au5ct5ya",
@@ -47,7 +47,18 @@
   "write_as_me": {
     "type": "chat",
     "opts": {
-      "template": "In my voice, style and tone, write based on the following prompt.\n\nPrompt:\n```\n{{input}}\n```",
+      "template": "You rewrite text in a pragmatic, no-nonsense style, prioritizing concise explanations and practical takeaways. In my writing style and tone, write the following.\n\n---\n{{input}}",
+      "strategy": "chat",
+      "params": {
+        "model": "ft:gpt-4o-2024-08-06:personal::Au5ct5ya",
+        "max_tokens": 4096
+      }
+    }
+  },
+  "write_email": {
+    "type": "chat",
+    "opts": {
+      "template": "You rewrite text in a pragmatic, no-nonsense style, prioritizing concise explanations and practical takeaways. In my writing style and tone, turn the following into a concise business email.\n\n---\n{{input}}",
       "strategy": "chat",
       "params": {
         "model": "ft:gpt-4o-2024-08-06:personal::Au5ct5ya",
