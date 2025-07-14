@@ -2,7 +2,7 @@ return {
   {
     "bew4lsh/Fetter",
     dependencies = {
-      -- Add dependencies if needed
+      "folke/which-key.nvim",
     },
     ft = { "markdown" }, -- Only load for markdown files
     keys = {
@@ -41,10 +41,18 @@ return {
 
       -- Reports
       { "<leader>tE", "<cmd>FetterReports<cr>", desc = "Report Menu" },
-      { "<leader>tc", "<cmd>FetterCompletedReport<cr>", desc = "Completed Tasks Report" },
       { "<leader>tg", "<cmd>FetterTimeReport<cr>", desc = "Time Tracking Report" },
       { "<leader>ti", "<cmd>FetterInProgress<cr>", desc = "In-Progress Tasks Report" },
     },
+    config = function(_, opts)
+      require("fetter").setup(opts)
+      
+      -- Register which-key group for better organization
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>t", group = "tasks" },
+      })
+    end,
     opts = {
       -- Your configuration options
       tags = {
