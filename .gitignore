@@ -9,3 +9,9 @@ data
 .aider*
 
 lazy-lock.json
+
+# Claude artifacts
+CLAUDE.md
+.claude/
+*.claude
+claude-*

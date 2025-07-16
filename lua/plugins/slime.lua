@@ -5,7 +5,18 @@ return {
       -- Slime configuration
       vim.g.slime_target = "wezterm" -- Change to your target (wezterm, tmux, etc.)
       vim.g.slime_paste_file = vim.fn.expand("$HOME/.slime_paste")
+      
+      -- Option 2: Try experimental bracketed paste with custom sequences
       vim.g.slime_bracketed_paste = 1
+      vim.g.slime_pre_send = "\027[200~"   -- ESC[200~ in octal (bracketed paste start)
+      vim.g.slime_post_send = "\027[201~"  -- ESC[201~ in octal (bracketed paste end)
+      
+      -- Option 3: If Option 2 fails, comment out the above and uncomment below
+      -- This uses the paste file approach with explicit preservation settings
+      -- vim.g.slime_preserve_curpos = 0
+      -- vim.g.slime_python_ipython = 1
+      -- vim.g.slime_dispatch_ipython_pause = 100  -- milliseconds
+      
       vim.g.slime_default_config = {
         socket_name = "default",
         target_pane = ".2",
