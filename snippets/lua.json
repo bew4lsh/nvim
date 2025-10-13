@@ -1,0 +1,34 @@
+{
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "function ${1:name}($2)",
+      "\t$0",
+      "end"
+    ],
+    "description": "Create a function"
+  },
+  "Local Function": {
+    "prefix": "lfn",
+    "body": [
+      "local function ${1:name}($2)",
+      "\t$0",
+      "end"
+    ],
+    "description": "Create a local function"
+  },
+  "Print": {
+    "prefix": "p",
+    "body": [
+      "print($1)"
+    ],
+    "description": "Print statement"
+  },
+  "Vim Inspect": {
+    "prefix": "vi",
+    "body": [
+      "print(vim.inspect($1))"
+    ],
+    "description": "Print vim.inspect"
+  }
+}

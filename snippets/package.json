@@ -1,0 +1,32 @@
+{
+  "name": "custom-snippets",
+  "version": "1.0.0",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./lua.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./javascript.json"
+      },
+      {
+        "language": "python",
+        "path": "./python.json"
+      },
+      {
+        "language": "ps1",
+        "path": "./powershell.json"
+      },
+      {
+        "language": "sql",
+        "path": "./sql.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./markdown.json"
+      }
+    ]
+  }
+}

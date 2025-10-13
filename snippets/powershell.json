@@ -1,0 +1,303 @@
+{
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "function ${1:FunctionName} {",
+      "\tparam(",
+      "\t\t$2",
+      "\t)",
+      "\t$0",
+      "}"
+    ],
+    "description": "Create a function"
+  },
+  "Advanced Function": {
+    "prefix": "fnadv",
+    "body": [
+      "function ${1:Verb-Noun} {",
+      "\t[CmdletBinding()]",
+      "\tparam(",
+      "\t\t[Parameter(Mandatory=\\$true)]",
+      "\t\t[string]\\$${2:ParameterName}$3",
+      "\t)",
+      "\tbegin {",
+      "\t\t$4",
+      "\t}",
+      "\tprocess {",
+      "\t\t$0",
+      "\t}",
+      "\tend {",
+      "\t\t",
+      "\t}",
+      "}"
+    ],
+    "description": "Advanced function with CmdletBinding"
+  },
+  "Comment-Based Help": {
+    "prefix": "help",
+    "body": [
+      "<#",
+      ".SYNOPSIS",
+      "\t${1:Short description}",
+      ".DESCRIPTION",
+      "\t${2:Long description}",
+      ".PARAMETER ${3:ParameterName}",
+      "\t${4:Parameter description}",
+      ".EXAMPLE",
+      "\t${5:Example usage}",
+      ".NOTES",
+      "\tAuthor: ${6:Your Name}",
+      "\tDate: ${7:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE}",
+      "#>",
+      "$0"
+    ],
+    "description": "Comment-based help template"
+  },
+  "Parameter Block": {
+    "prefix": "param",
+    "body": [
+      "[Parameter(${1:Mandatory=\\$true})]",
+      "[${2:string}]",
+      "\\$${3:ParameterName}$0"
+    ],
+    "description": "Parameter with attributes"
+  },
+  "Write-Host": {
+    "prefix": "wh",
+    "body": [
+      "Write-Host \"$1\""
+    ],
+    "description": "Write-Host statement"
+  },
+  "Write-Verbose": {
+    "prefix": "wv",
+    "body": [
+      "Write-Verbose \"$1\""
+    ],
+    "description": "Write-Verbose statement"
+  },
+  "Write-Output": {
+    "prefix": "wo",
+    "body": [
+      "Write-Output $1"
+    ],
+    "description": "Write-Output statement"
+  },
+  "ForEach-Object": {
+    "prefix": "fe",
+    "body": [
+      "ForEach-Object {",
+      "\t$0",
+      "}"
+    ],
+    "description": "ForEach-Object loop"
+  },
+  "ForEach Loop": {
+    "prefix": "foreach",
+    "body": [
+      "foreach (\\$${1:item} in \\$${2:collection}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "ForEach loop"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (\\$${1:i} = 0; \\$${1:i} -lt ${2:10}; \\$${1:i}++) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "For loop"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while (${1:\\$true}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "Do-While Loop": {
+    "prefix": "do",
+    "body": [
+      "do {",
+      "\t$0",
+      "} while (${1:condition})"
+    ],
+    "description": "Do-While loop"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "If-Else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:condition}) {",
+      "\t$2",
+      "}",
+      "else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "If-Else statement"
+  },
+  "Switch": {
+    "prefix": "switch",
+    "body": [
+      "switch (\\$${1:variable}) {",
+      "\t${2:value1} { $3 }",
+      "\t${4:value2} { $5 }",
+      "\tDefault { $0 }",
+      "}"
+    ],
+    "description": "Switch statement"
+  },
+  "Try Catch": {
+    "prefix": "tc",
+    "body": [
+      "try {",
+      "\t$0",
+      "}",
+      "catch {",
+      "\tWrite-Error $_.Exception.Message",
+      "}"
+    ],
+    "description": "Try-catch block"
+  },
+  "Try Catch Finally": {
+    "prefix": "tcf",
+    "body": [
+      "try {",
+      "\t$1",
+      "}",
+      "catch {",
+      "\tWrite-Error $_.Exception.Message",
+      "\t$2",
+      "}",
+      "finally {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Try-catch-finally block"
+  },
+  "Hashtable": {
+    "prefix": "hash",
+    "body": [
+      "\\$${1:hashTable} = @{",
+      "\t${2:Key} = ${3:Value}",
+      "\t$0",
+      "}"
+    ],
+    "description": "Create hashtable"
+  },
+  "PSCustomObject": {
+    "prefix": "pso",
+    "body": [
+      "[PSCustomObject]@{",
+      "\t${1:Property} = ${2:Value}",
+      "\t$0",
+      "}"
+    ],
+    "description": "Create PSCustomObject"
+  },
+  "Splatting": {
+    "prefix": "splat",
+    "body": [
+      "\\$${1:params} = @{",
+      "\t${2:Parameter} = ${3:Value}",
+      "\t$0",
+      "}",
+      "${4:Command} @${1:params}"
+    ],
+    "description": "Parameter splatting"
+  },
+  "Get-ChildItem Filter": {
+    "prefix": "gci",
+    "body": [
+      "Get-ChildItem -Path ${1:C:\\\\} -Filter ${2:*.txt} -Recurse $0"
+    ],
+    "description": "Get-ChildItem with filter"
+  },
+  "Import-Csv": {
+    "prefix": "importcsv",
+    "body": [
+      "\\$${1:data} = Import-Csv -Path ${2:file.csv}$0"
+    ],
+    "description": "Import CSV file"
+  },
+  "Export-Csv": {
+    "prefix": "exportcsv",
+    "body": [
+      "\\$${1:data} | Export-Csv -Path ${2:output.csv} -NoTypeInformation$0"
+    ],
+    "description": "Export to CSV file"
+  },
+  "Test-Path": {
+    "prefix": "test",
+    "body": [
+      "if (Test-Path -Path ${1:path}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Test if path exists"
+  },
+  "Get-Content": {
+    "prefix": "gc",
+    "body": [
+      "\\$${1:content} = Get-Content -Path ${2:file.txt}$0"
+    ],
+    "description": "Get file content"
+  },
+  "Write-Progress": {
+    "prefix": "progress",
+    "body": [
+      "Write-Progress -Activity \"${1:Processing}\" -Status \"${2:Item \\$i of \\$total}\" -PercentComplete ((\\$${3:i} / \\$${4:total}) * 100)$0"
+    ],
+    "description": "Show progress bar"
+  },
+  "Measure-Command": {
+    "prefix": "measure",
+    "body": [
+      "Measure-Command { $0 }"
+    ],
+    "description": "Measure execution time"
+  },
+  "Where-Object": {
+    "prefix": "where",
+    "body": [
+      "Where-Object { \\$_.${1:Property} -${2:eq} ${3:Value} }$0"
+    ],
+    "description": "Filter objects"
+  },
+  "Select-Object": {
+    "prefix": "select",
+    "body": [
+      "Select-Object -Property ${1:Property1}, ${2:Property2}$0"
+    ],
+    "description": "Select properties"
+  },
+  "Invoke-RestMethod": {
+    "prefix": "rest",
+    "body": [
+      "\\$${1:response} = Invoke-RestMethod -Uri \"${2:https://api.example.com}\" -Method ${3:Get}$0"
+    ],
+    "description": "REST API call"
+  },
+  "Region": {
+    "prefix": "region",
+    "body": [
+      "#region ${1:RegionName}",
+      "$0",
+      "#endregion"
+    ],
+    "description": "Code region"
+  }
+}

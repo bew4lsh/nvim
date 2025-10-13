@@ -1,0 +1,220 @@
+{
+  "Header 1": {
+    "prefix": "h1",
+    "body": [
+      "# ${1:Title}",
+      "$0"
+    ],
+    "description": "Insert H1 header"
+  },
+  "Header 2": {
+    "prefix": "h2",
+    "body": [
+      "## ${1:Title}",
+      "$0"
+    ],
+    "description": "Insert H2 header"
+  },
+  "Header 3": {
+    "prefix": "h3",
+    "body": [
+      "### ${1:Title}",
+      "$0"
+    ],
+    "description": "Insert H3 header"
+  },
+  "Code Block": {
+    "prefix": "code",
+    "body": [
+      "```${1:language}",
+      "$0",
+      "```"
+    ],
+    "description": "Code block with language"
+  },
+  "Inline Code": {
+    "prefix": "ic",
+    "body": [
+      "`${1:code}`$0"
+    ],
+    "description": "Inline code"
+  },
+  "Link": {
+    "prefix": "link",
+    "body": [
+      "[${1:text}](${2:url})$0"
+    ],
+    "description": "Insert link"
+  },
+  "Image": {
+    "prefix": "img",
+    "body": [
+      "![${1:alt text}](${2:url})$0"
+    ],
+    "description": "Insert image"
+  },
+  "Table": {
+    "prefix": "table",
+    "body": [
+      "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+      "| ----------- | ----------- | ----------- |",
+      "| ${4:Cell1}   | ${5:Cell2}   | ${6:Cell3}   |",
+      "$0"
+    ],
+    "description": "Create table"
+  },
+  "Task List": {
+    "prefix": "task",
+    "body": [
+      "- [ ] ${1:Task}$0"
+    ],
+    "description": "Task list item"
+  },
+  "Unordered List": {
+    "prefix": "ul",
+    "body": [
+      "- ${1:Item}$0"
+    ],
+    "description": "Unordered list item"
+  },
+  "Ordered List": {
+    "prefix": "ol",
+    "body": [
+      "1. ${1:Item}$0"
+    ],
+    "description": "Ordered list item"
+  },
+  "Blockquote": {
+    "prefix": "quote",
+    "body": [
+      "> ${1:Quote}$0"
+    ],
+    "description": "Blockquote"
+  },
+  "Horizontal Rule": {
+    "prefix": "hr",
+    "body": [
+      "---",
+      "$0"
+    ],
+    "description": "Horizontal rule"
+  },
+  "Bold": {
+    "prefix": "bold",
+    "body": [
+      "**${1:text}**$0"
+    ],
+    "description": "Bold text"
+  },
+  "Italic": {
+    "prefix": "italic",
+    "body": [
+      "*${1:text}*$0"
+    ],
+    "description": "Italic text"
+  },
+  "Bold Italic": {
+    "prefix": "bi",
+    "body": [
+      "***${1:text}***$0"
+    ],
+    "description": "Bold and italic text"
+  },
+  "Strikethrough": {
+    "prefix": "strike",
+    "body": [
+      "~~${1:text}~~$0"
+    ],
+    "description": "Strikethrough text"
+  },
+  "Footnote": {
+    "prefix": "fn",
+    "body": [
+      "[^${1:1}]: ${2:Footnote text}$0"
+    ],
+    "description": "Footnote"
+  },
+  "Footnote Reference": {
+    "prefix": "fnref",
+    "body": [
+      "[^${1:1}]$0"
+    ],
+    "description": "Footnote reference"
+  },
+  "Collapsible Section": {
+    "prefix": "details",
+    "body": [
+      "<details>",
+      "<summary>${1:Title}</summary>",
+      "",
+      "$0",
+      "",
+      "</details>"
+    ],
+    "description": "Collapsible section"
+  },
+  "YAML Frontmatter": {
+    "prefix": "yaml",
+    "body": [
+      "---",
+      "title: ${1:Title}",
+      "date: ${2:2025-01-01}",
+      "tags: [${3:tag1, tag2}]",
+      "---",
+      "$0"
+    ],
+    "description": "YAML frontmatter"
+  },
+  "Mermaid Diagram": {
+    "prefix": "mermaid",
+    "body": [
+      "```mermaid",
+      "${1:graph TD}",
+      "\t${2:A[Start]} --> ${3:B[End]}",
+      "$0",
+      "```"
+    ],
+    "description": "Mermaid diagram"
+  },
+  "Math Block": {
+    "prefix": "math",
+    "body": [
+      "$$",
+      "${1:equation}",
+      "$$",
+      "$0"
+    ],
+    "description": "Math block (LaTeX)"
+  },
+  "Inline Math": {
+    "prefix": "im",
+    "body": [
+      "$${1:equation}$$$0"
+    ],
+    "description": "Inline math (LaTeX)"
+  },
+  "Callout Info": {
+    "prefix": "info",
+    "body": [
+      "> [!INFO]",
+      "> ${1:Information}$0"
+    ],
+    "description": "Info callout (Obsidian style)"
+  },
+  "Callout Warning": {
+    "prefix": "warn",
+    "body": [
+      "> [!WARNING]",
+      "> ${1:Warning message}$0"
+    ],
+    "description": "Warning callout (Obsidian style)"
+  },
+  "Callout Note": {
+    "prefix": "note",
+    "body": [
+      "> [!NOTE]",
+      "> ${1:Note text}$0"
+    ],
+    "description": "Note callout (Obsidian style)"
+  }
+}
