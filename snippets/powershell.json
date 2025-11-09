@@ -299,5 +299,55 @@
       "#endregion"
     ],
     "description": "Code region"
+  },
+  "ExportDb": {
+    "prefix": "exportdb",
+    "body": [
+      "$ServerName = '.database.windows.net'",
+      "$DatabaseName = ''",
+      "$OutputPath = ''",
+      "Export-AzureSqlDDL `",
+      "    -ServerName $ServerName `",
+      "    -DatabaseName $DatabaseName `",
+      "    -OutputPath $OutputPath `",
+      "    -UseAzureAuth `",
+      "    -SqlPackagePath $LocalSqlPackagePath"
+    ],
+    "description": "Export az db to sql files"
+  },
+  "ListDbs": {
+    "prefix": "listdbs",
+    "body": [
+      "$ResourceGroupName = ''",
+      "$ServerName = '' ",
+      "$Searchpattern = ''",
+      "$dblist = get-azsqldatabase `",
+      "  -ResourceGroupName $ResourceGroupName `",
+      "  -ServerName $ServerName `",
+      "| where {$_.DatabaseName -like $Searchpattern}",
+      "$dblist | sort CreationDate -Desc | select DatabaseName, CreationDate | ft"
+    ],
+    "description": "List az sql dbs"
+  },
+  "renameDb": {
+    "prefix": "renamedb",
+    "body": [
+      "$DatabaseName = ''",
+      "$NewName = ''",
+      "Set-AzSqlDatabase -ResourceGroupName $ResourceGroupName `",
+      "  -ServerName $ServerName `",
+      "  -DatabaseName $DatabaseName `",
+      "  -NewName $NewName"
+    ],
+    "description": "List az sql dbs"
+  },
+  "sandboxRefresh": {
+    "prefix": "sandboxrefresh",
+    "body": [
+      "# Refresh sandbox",
+      "# input 4 char sitecode",
+      "A4C-Client-SandboxRefresh 'abcd' $creds"
+    ],
+    "description": "List az sql dbs"
   }
 }
